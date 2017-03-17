@@ -4,7 +4,7 @@
 -- Control Number:	xxxx-xxxx-xxxx-xxxx
 -- Version: 	0.0
 -- Phone : +4915775148443
--- Email: hus244@gmail.com
+-- Email: refaa.hussain@gmail.com
 
 Problem :
 I have a primary database Oracle 11g and a standby database,
