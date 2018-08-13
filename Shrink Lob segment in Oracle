@@ -1,0 +1,20 @@
+Shrinking a sparsely populated segment improves the performance of scan and DML operations on that segment.
+
+It resolves mainly two issues:-
+• Full table scans (fewer and denser blocks)
+• Better index access (fewer I/Os on range ROWID scans due to a more compact tree)
+
+ 
+
+
+SQL> SELECT b.owner,b.table_name,b.column_name,a.segment_name, a.bytes FROM dba_segments a JOIN dba_lobs b on A.SEGMENT_NAME=B.SEGMENT_NAME and B.SEGMENT_NAME='SYS_LOB0000064465C00005$$';
+
+SQL> SELECT b.owner,b.table_name,b.column_name,a.segment_name, a.bytes FROM dba_segments a JOIN dba_lobs b on A.SEGMENT_NAME=B.SEGMENT_NAME and B.SEGMENT_NAME='SYS_LOB0000064465C00005$$';
+
+SQL> ALTER TABLE COGNOS.CMDATA MODIFY LOB (DATAPROP) (SHRINK SPACE);
+
+SQL> ALTER TABLE COGNOS.CMDATA MODIFY LOB (DATAPROP) (SHRINK SPACE);
+
+SQL> SELECT b.owner,b.table_name,b.column_name,a.segment_name, a.bytes FROM dba_segments a JOIN dba_lobs b on A.SEGMENT_NAME=B.SEGMENT_NAME and B.SEGMENT_NAME='SYS_LOB0000064465C00005$$';
+
+SQL> SELECT b.owner,b.table_name,b.column_name,a.segment_name, a.bytes FROM dba_segments 
